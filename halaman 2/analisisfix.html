@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LagiLagiAbis - StockPredick</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../halaman 1/indexfix.html" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      LagiLagiAbis
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../halaman 1/indexfix.html">Home</a></li>
+      <li><a href="#" class="active">Analisis</a></li>
+      <li><a href="../halaman 1/indexfix.html#cara-kerja">Cara Kerja</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="../halaman 3/aboutus.html" class="btn-aboutus" style="text-decoration: none; color: white; display: inline-block;">About Us</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- JUDUL -->
+    <div class="page-title">
+      <h1>StockPredict</h1>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-group">
+      <div class="select-wrapper">
+        <select id="kategori" onchange="this.classList.add('selected')">
+          <option value="" disabled selected>Pilihan : Barang, Minuman, Makanan</option>
+          <option value="Barang">Barang</option>
+          <option value="Minuman">Minuman</option>
+          <option value="Makanan">Makanan</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="namaBarang" placeholder="Nama Barang" />
+    </div>
+
+    <div class="form-group">
+      <input type="number" id="stokAwal" placeholder="Stok Saat Ini" min="0" />
+    </div>
+
+    <!-- Preview ringkasan data penjualan -->
+    <div class="penjualan-preview" id="penjualanPreview"></div>
+
+    <button class="btn-input-penjualan" onclick="bukaModal()">Klik Untuk Input Penjualan</button>
+    <button class="btn-hitung" onclick="hitungPrediksi()">Hitung</button>
+
+    <!-- HASIL -->
+    <div class="hasil-section">
+      <div class="hasil-header">
+        <h2>Hasil</h2>
+      </div>
+      <div class="hasil-list">
+        <div class="hasil-item">Nama Barang : <span id="outNama"></span></div>
+        <div class="hasil-item">Rata-rata Penjualan : <span id="outRata"></span></div>
+        <div class="hasil-item">Total Penjualan Aktual : <span id="outTotal"></span></div>
+        <div class="hasil-item">Prediksi Stok Habis : <span id="outHabis"></span></div>
+        <div class="hasil-item">Rekomendasi : <span id="outRekomendasi"></span></div>
+      </div>
+
+      <div class="tabel-wrapper" id="tabelWrapper" style="display:none; margin-top: 28px;">
+        <table class="tabel-prediksi">
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Tipe</th>
+              <th>Penjualan (unit)</th>
+              <th>Sisa Stok (unit)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tabelBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL INPUT PENJUALAN -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h3>Input Data Penjualan</h3>
+      <p id="modalDesc">Masukkan total hari prediksi dan berapa hari yang sudah terjadi.</p>
+
+      <!-- STEP 1: Konfigurasi jumlah hari -->
+      <div class="step-1" id="step1">
+        <label class="step-label">Total Hari Prediksi</label>
+        <input type="number" class="step-input" id="inputTotalHari" placeholder="Contoh: 7" min="1" max="30" />
+
+        <label class="step-label">Sudah Sampai Hari Ke- (hari aktual yang sudah terjadi)</label>
+        <input type="number" class="step-input" id="inputHariAktual" placeholder="Contoh: 5" min="1" max="30" />
+
+        <div class="modal-actions">
+          <button class="btn-modal-cancel" onclick="tutupModal()">Batal</button>
+          <button class="btn-modal-next" onclick="lanjutStep2()">Lanjut →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Input per hari -->
+      <div class="step-2" id="step2">
+        <div class="info-prediksi" id="infoPrediksi"></div>
+        <div class="hari-inputs-container" id="hariInputsContainer"></div>
+        <div class="modal-actions">
+          <button class="btn-modal-back" onclick="kembaliStep1()">← Kembali</button>
+          <button class="btn-modal-save" onclick="simpanPenjualan()">Simpan</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"></div>
+        LagiLagiAbis
+      </div>
+      <p>Website yang dirancang untuk memprediksi stok barang adalah sistem yang membantu memperkirakan kebutuhan barang berdasarkan data penjualan sebelumnya, sehingga pengguna dapat mengetahui apakah stok mencukupi atau perlu restock.</p>
+    </div>
+    <div class="footer-kontak">
+      <h4>Kontak</h4>
+      <div class="kontak-item">
+        <div class="kontak-icon">
+          <img src="gambar/lokasi.svg" alt="lokasi" class="lokasi-ikon">
+        </div>
+        <span>Mugarsari, Tamansari Tasikmalaya, Indonesia 46196</span>
+      </div>
+      <div class="kontak-item">
+        <div class="kontak-icon">
+          <img src="gambar/email.svg" alt="email" class="email-ikon">
+        </div>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab6bbbdb3b6bbbdb3bbb8b3a99abdb7bbb3b6f4b9b5b7">[lagilagiabis@gmail.com]</a></span>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+     <p>&copy; 2026 Lagi Lagi Abis</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
