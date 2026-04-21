@@ -54,10 +54,10 @@
     // ===== MEMBER CARD HOVER EFFECT =====
     document.querySelectorAll('.member-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
-        card.style.background = 'var(--green-pastel)';
+        card.style.background = 'var(--peach-dark)';
       });
       card.addEventListener('mouseleave', () => {
-        card.style.background = 'var(--gray-bg)';
+        card.style.background = 'var(--peach-hover)';
       });
     });
 
