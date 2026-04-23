@@ -21,7 +21,7 @@
 
     // ===== NAV LOGO → HOME =====
     document.getElementById('navLogo').addEventListener('click', () => {
-      window.location.href = '../halaman 1/indexfix.html';
+      window.location.href = '../index.html';
     });
 
      // ===== NAV LOGO → HOME =====
