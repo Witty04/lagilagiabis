@@ -56,7 +56,7 @@
 
     // ===== TOMBOL MULAI ANALISIS =====
     document.querySelector('.btn-mulai').addEventListener('click', function() {
-      window.location.href = 'halaman 2/analisisfix.html';
+      window.location.href = 'halaman-2/analisisfix.html';
     });
 
     // ===== SCROLL REVEAL ANIMATION =====
