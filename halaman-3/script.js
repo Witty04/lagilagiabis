@@ -21,7 +21,7 @@
 
     // ===== NAV LOGO → HOME =====
     document.getElementById('navLogo').addEventListener('click', () => {
-      window.location.href = '../halaman 1/indexfix.html';
+      window.location.href = '../index.html';
     });
 
      // ===== NAV LOGO → HOME =====
@@ -36,7 +36,7 @@
 
     // ===== TOMBOL MULAI ANALISIS =====
     document.getElementById('btnMulaiAnalisis').addEventListener('click', () => {
-      window.location.href = '../halaman 2/analisisfix.html';
+      window.location.href = '../halaman-2/analisisfix.html';
     });
 
     // ===== SCROLL REVEAL ANIMATION =====

@@ -50,8 +50,8 @@
     }
 
     .nav-logo-icon {
-      width: 28px;
-      height: 28px;
+      width: 40px;
+      height: 40px;
       background-image: url('gambar/logoLLA.png');
       background-size: cover;
       border-radius: 6px;
@@ -383,8 +383,8 @@
     }
 
     .footer-logo-icon {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       background-image: url('gambar/logoLLA.png');
       background-size: cover;
       border-radius: 5px;
