@@ -66,9 +66,10 @@
     }
 
     .nav-logo-icon {
-      width: 28px;
-      height: 28px;
-      background: var(--green-dark);
+      width: 40px;
+      height: 40px;
+      background-image: url('../gambar/logoLLA.png');
+      background-size: cover;
       border-radius: 6px;
       flex-shrink: 0;
     }
@@ -229,7 +230,7 @@
 
     /* ===== TEAM PHOTO (lebar penuh) ===== */
     .team-photo-wrapper {
-      background-image: url('../gambar/team.HEIC');
+      background-image: url('../gambar/team.jpeg');
       background-position: center;
       background-size: cover;
       margin: 36px 0 24px;
@@ -243,6 +244,13 @@
       justify-content: center;
       position: relative;
     }
+
+    .team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--gray-card);
+}
 
     .team-photo-wrapper .photo-placeholder {
       display: flex;
@@ -380,9 +388,10 @@
     }
 
     .footer-logo-icon {
-      width: 22px;
-      height: 22px;
-      background: var(--peach-dark);
+      width: 40px;
+      height: 40px;
+      background-image: url('../gambar/logoLLA.png');
+      background-size: cover;
       border-radius: 5px;
       flex-shrink: 0;
     }
@@ -456,7 +465,9 @@
       opacity: 1;
       transform: translateY(0);
     }
-
+    .photo-1 {
+      background-image: url('../gambar/okan.jpeg');
+    }
     .photo-2 {
       background-image: url('../gambar/fathir.HEIC');
     }
@@ -516,7 +527,7 @@
       LagiLagiAbis
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="../halaman 1/indexfix.html">Home</a></li>
+      <li><a href="../index.html">Home</a></li>
       <li><a href="../halaman 2/analisisfix.html">Analisis</a></li>
       <li><a href="../halaman 1/indexfix.html">Cara Kerja</a></li>
     </ul>
@@ -551,7 +562,8 @@
 
       <!-- Foto tim besar -->
       <div class="team-photo-wrapper reveal reveal-delay-1">
-      </div>
+  <!-- <img src="../gambar/team.jpeg" alt="Foto Tim" class="team-photo"> -->
+</div>
 
       <p class="team-desc reveal reveal-delay-2">
         Kami adalah tim mahasiswa Informatika, Fakultas Teknik, Universitas Siliwangi,
@@ -569,10 +581,6 @@
 
         <div class="member-card reveal reveal-delay-1">
           <div class="member-photo photo-1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
           </div>
           <div class="member-info">
             <h3>Okan Ramadhan</h3>
@@ -649,15 +657,15 @@
       <h4>Kontak</h4>
       <div class="kontak-item">
         <div class="kontak-icon">
-          <img src="gambar/lokasi.svg" alt="icon lokasi" class="lokasi-ikon">
+          <img src="../gambar/location.svg" alt="icon lokasi" class="lokasi-ikon">
         </div>
         <span>Mugarsari, Tamansari Tasikmalaya, Indonesia 46196</span>
       </div>
       <div class="kontak-item">
         <div class="kontak-icon">
-          <img src="gambar/email.svg" alt="icon email" class="email-ikon">
+          <img src="../gambar/email.svg" alt="icon email" class="email-ikon">
         </div>
-        <span>lagilagiabis@gmail.com</span>
+        <span><a href="mailto:lagilagiabis@gmail.com">lagilagiabis@gmail.com</a></span>
       </div>
     </div>
   </footer>
