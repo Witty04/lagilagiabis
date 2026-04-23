@@ -224,5 +224,5 @@
     // ===== TOMBOL RESET (opsional: klik logo kembali ke index) =====
     document.querySelector('.nav-logo').addEventListener('click', function(e) {
       e.preventDefault();
-      window.location.href = 'index__2_.html';
+      window.location.href = '../index.html';
     });
