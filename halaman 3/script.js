@@ -36,7 +36,7 @@
 
     // ===== TOMBOL MULAI ANALISIS =====
     document.getElementById('btnMulaiAnalisis').addEventListener('click', () => {
-      window.location.href = '../halaman 2/analisisfix.html';
+      window.location.href = '../halaman-2/analisisfix.html';
     });
 
     // ===== SCROLL REVEAL ANIMATION =====
