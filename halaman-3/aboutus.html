@@ -50,10 +50,6 @@
       transition: box-shadow 0.3s;
     }
 
-    nav.scrolled {
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    }
-
     .nav-logo {
       display: flex;
       align-items: center;
@@ -62,7 +58,6 @@
       font-size: 16px;
       color: var(--text-dark);
       text-decoration: none;
-      cursor: pointer;
     }
 
     .nav-logo-icon {
@@ -86,11 +81,7 @@
       color: var(--text-mid);
       font-size: 15px;
       font-weight: 500;
-      transition: color 0.2s;
     }
-
-    .nav-links a:hover { color: var(--green-dark); }
-    .nav-links a.active { color: var(--green-dark); font-weight: 600; }
 
     .btn-aboutus {
       background: var(--peach-dark);
@@ -101,63 +92,12 @@
       font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
       font-family: 'Inter', sans-serif;
     }
 
-    .btn-aboutus:hover { background: var(--peach-hover); }
-
-    /* ===== HAMBURGER ===== */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--text-dark);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ===== MOBILE NAV ===== */
-    @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
-      .hamburger { display: flex; }
-      .nav-links {
-        display: none;
-        position: fixed;
-        top: 61px;
-        left: 0; right: 0;
-        background: var(--white);
-        flex-direction: column;
-        gap: 0;
-        border-bottom: 1px solid #e8e4df;
-        padding: 8px 0;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      }
-      .nav-links.mobile-open { display: flex; }
-      .nav-links li { width: 100%; }
-      .nav-links a { display: block; padding: 14px 24px; font-size: 15px; }
-    }
-
     /* ===== MAIN ===== */
-    main {
-      flex: 1;
-    }
+    main { flex: 1; }
 
-    /* ===== ABOUT SECTION ===== */
     .about-section {
       padding: 64px 60px 48px;
       text-align: center;
@@ -165,34 +105,6 @@
       margin: 0 auto;
     }
 
-    .about-section h1 {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--green-dark);
-      margin-bottom: 18px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .about-section h1::after {
-      content: '';
-      display: block;
-      width: 60%;
-      height: 3px;
-      background: var(--green-pale);
-      border-radius: 2px;
-      margin: 10px auto 0;
-    }
-
-    .about-section p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.8;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    /* ===== DIVIDER ===== */
     .divider {
       width: 100%;
       height: 1px;
@@ -201,7 +113,6 @@
       margin: 0 auto;
     }
 
-    /* ===== TEAM SECTION ===== */
     .team-section {
       padding: 56px 60px 64px;
       max-width: 860px;
@@ -210,68 +121,19 @@
       text-align: center;
     }
 
-    .team-section h2 {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--green-dark);
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .team-section h2::after {
-      content: '';
-      display: block;
-      width: 50%;
-      height: 3px;
-      background: var(--green-pale);
-      border-radius: 2px;
-      margin: 8px auto 0;
-    }
-
-    /* ===== TEAM PHOTO (lebar penuh) ===== */
     .team-photo-wrapper {
-      background-image: url('../gambar/team.jpeg');
-      background-position: center;
-      background-size: cover;
       margin: 36px 0 24px;
       border-radius: 16px;
       overflow: hidden;
-      /* background: var(--gray-card); */
       width: 100%;
       aspect-ratio: 16/7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      background-image: url(../gambar/team.jpeg);
+      background-size: cover;
     }
 
-    .team-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: var(--gray-card);
-}
-
-    .team-photo-wrapper .photo-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    .team-photo-wrapper .photo-placeholder svg {
-      width: 48px;
-      height: 48px;
-      opacity: 0.4;
-    }
-
-    /* ===== TEAM DESC ===== */
     .team-desc {
       font-size: 14px;
       color: var(--text-muted);
-      text-align: center;
       line-height: 1.85;
       max-width: 640px;
       margin: 0 auto 48px;
@@ -289,10 +151,9 @@
       border-radius: 16px;
       overflow: hidden;
       transition: transform 0.25s, box-shadow 0.25s;
-      cursor: default;
     }
 
-    .member-card:hover {
+     .member-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 28px var(--peach-dark);
     }
@@ -300,67 +161,38 @@
     .member-photo {
       width: 100%;
       aspect-ratio: 4/3;
-      /* background-image: url('../gambar/dita.HEIC'); */
       background-size: cover;
-      background-repeat: no-repeat;
       background-position: center;
+    }
+
+    .member-info { padding: 18px 20px 20px; text-align: center; }
+    .member-info h3 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .member-info .member-role { font-size: 12px; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+
+    /* ===== SOCIAL LINKS ===== */
+    .social-links {
       display: flex;
-      align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
+      gap: 15px;
+      margin-top: 12px;
     }
 
-    .member-photo svg {
-      width: 44px;
-      height: 44px;
-      opacity: 0.3;
+    .social-links a {
+      display: inline-block;
+      transition: transform 0.2s ease, opacity 0.2s;
     }
 
-    .member-photo .member-initials {
-      position: absolute;
-      bottom: 12px;
-      right: 14px;
-      background: var(--peach-dark);
-      color: var(--white);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    .social-links a:hover { transform: scale(1.2); opacity: 0.8; }
+
+    .social-links img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1); /* Membuat ikon menjadi putih */
     }
 
-    .member-info {
-      padding: 18px 20px 20px;
-    }
+    /* Bagian yang dihapus/disembunyikan sesuai permintaan */
+    .cta-section { display: none; }
 
-    .member-info h3 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .member-info .member-role {
-      font-size: 12px;
-      color: var(--white);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 8px;
-    }
-
-    .member-info p {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    
     /* ===== FOOTER ===== */
     footer {
       display: flex;
@@ -455,197 +287,142 @@
       border-radius: 4px;
     }
 
-    /* ===== REVEAL ANIMATION ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .photo-1 {
-      background-image: url('../gambar/okan.jpeg');
-    }
-    .photo-2 {
-      background-image: url('../gambar/fathir.HEIC');
-    }
-    .photo-3 {
-      background-image: url('../gambar/haviz.HEIC');
-    }
-    .photo-4{
-      background-image: url('../gambar/salman.HEIC');
-    }
-    .photo-5{
-      background-image: url('../gambar/dita.HEIC');
-    }
-    .photo-6 {
-      background-image: url('../gambar/sheyla.HEIC');
-    }
+    /* Animasi Reveal */
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-    .reveal-delay-6 { transition-delay: 0.6s; }
+    /* Foto Anggota */
+    .photo-1 { background-image: url('../gambar/okan.jpeg'); }
+    .photo-2 { background-image: url('../gambar/fathir.HEIC'); }
+    .photo-3 { background-image: url('../gambar/haviz.HEIC'); }
+    .photo-4 { background-image: url('../gambar/salman.HEIC'); }
+    .photo-5 { background-image: url('../gambar/dita.HEIC'); }
+    .photo-6 { background-image: url('../gambar/sheyla.HEIC'); }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .about-section { padding: 40px 24px 32px; }
-      .about-section h1 { font-size: 26px; }
-
-      .team-section { padding: 40px 24px 48px; }
-      .team-section h2 { font-size: 22px; }
-
-      .member-grid { grid-template-columns: 1fr; gap: 16px; }
-
-      .nilai-section { padding: 40px 24px 48px; }
-      .nilai-grid { grid-template-columns: 1fr; gap: 12px; }
-
-      .cta-section { padding: 40px 24px; }
-      .btn-cta { width: 100%; padding: 14px; }
-
-      footer {
-        flex-direction: column;
-        padding: 32px 24px 24px;
-        gap: 28px;
-      }
-
-      .footer-brand { max-width: 100%; }
-      .footer-bottom { padding: 14px 24px; }
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .member-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; padding: 32px 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav id="navbar">
-    <a class="nav-logo" id="navLogo">
+    <a href="../index.html" class="nav-logo">
       <div class="nav-logo-icon"></div>
       LagiLagiAbis
     </a>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../halaman-2/analisisfix.html">Analisis</a></li>
       <li><a href="../index.html#cara-kerja">Cara Kerja</a></li>
     </ul>
-    <div style="display:flex; align-items:center; gap:12px;">
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <button class="btn-aboutus" id="btnAboutUs">About Us</button>
-    </div>
+    <button class="btn-aboutus">About Us</button>
   </nav>
 
   <main>
-
-    <!-- ABOUT SECTION -->
     <section class="about-section">
       <h1 class="reveal">About LagiLagiAbis</h1>
-      <p class="reveal reveal-delay-1">
+      <p class="reveal">
         Lagi-Lagi Abis adalah sebuah platform manajemen inventaris cerdas yang dikembangkan oleh
-        tim mahasiswa Informatika, Fakultas Teknik, Universitas Siliwangi. Proyek ini lahir dari
-        keresahan pelaku usaha yang sering mengalami kendala "barang habis mendadak" atau
-        penumpukan stok yang tidak perlu. Sebagai mahasiswa teknik, kami berupaya
-        mengintegrasikan logika komputasi dengan kebutuhan nyata di lapangan untuk menciptakan
-        sistem prediksi stok yang akurat dan efisien.
+        tim mahasiswa Informatika, Fakultas Teknik, Universitas Siliwangi. Kami mengintegrasikan logika kalkulus untuk menciptakan sistem prediksi stok yang akurat.
       </p>
     </section>
 
     <div class="divider"></div>
 
-    <!-- TEAM SECTION -->
     <section class="team-section">
       <h2 class="reveal">Development Tim</h2>
-
-      <!-- Foto tim besar -->
-      <div class="team-photo-wrapper reveal reveal-delay-1">
-  <!-- <img src="../gambar/team.jpeg" alt="Foto Tim" class="team-photo"> -->
-</div>
-
-      <p class="team-desc reveal reveal-delay-2">
-        Kami adalah tim mahasiswa Informatika, Fakultas Teknik, Universitas Siliwangi,
-        yang berfokus pada integrasi manajemen data dan teknologi prediksi. Melalui
-        website Lagi-Lagi Abis, kami menjawab tantangan pengelolaan inventaris yang
-        tidak efisien dengan memanfaatkan konsep Barisan dan Deret. Dengan
-        mengimplementasikan pendekatan kalkulus untuk menganalisis pola penjualan,
-        kami menghadirkan solusi digital yang mampu memproyeksikan kebutuhan stok
-        secara akurat guna membantu mengoptimalkan ketersediaan barang bagi para
-        pelaku usaha.
+      <div class="team-photo-wrapper reveal"></div>
+      <p class="team-desc reveal">
+        Kami memanfaatkan konsep Barisan dan Deret untuk menghadirkan solusi digital yang mampu memproyeksikan kebutuhan stok bagi para pelaku usaha.
       </p>
 
-      <!-- Member Cards Grid (6 anggota = 3 baris × 2 kolom) -->
       <div class="member-grid">
-
-        <div class="member-card reveal reveal-delay-1">
-          <div class="member-photo photo-1">
-          </div>
+        <!-- Anggota 1 -->
+        <div class="member-card reveal">
+          <div class="member-photo photo-1"></div>
           <div class="member-info">
             <h3>Okan Ramadhan</h3>
             <div class="member-role">257006111008</div>
+            <div class="social-links">
+              <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG"></a>
+              <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            </div>
           </div>
         </div>
 
-        <div class="member-card reveal reveal-delay-2">
-          <div class="member-photo photo-2">
-          </div>
+        <!-- Anggota 2 -->
+        <div class="member-card reveal">
+          <div class="member-photo photo-2"></div>
           <div class="member-info">
-
-            <h3>Muhammad Fathir Maulana</h3>
+            <h3>M. Fathir Maulana</h3>
             <div class="member-role">257006111022</div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/mhmdfathirm?igsh=MWJtc28zb2s2dm02bw==" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG"></a>
+              <a href="https://www.tiktok.com/@mhmdfathirm?_r=1&_t=ZS-95z8uZUW7td" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            </div>
           </div>
         </div>
 
-        <div class="member-card reveal reveal-delay-3">
-          <div class="member-photo photo-3">
-          </div>
+        <!-- Anggota 3 -->
+        <div class="member-card reveal">
+          <div class="member-photo photo-3"></div>
           <div class="member-info">
             <h3>Rizky Havis</h3>
             <div class="member-role">257006111024</div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/rhaviz_?igsh=eTAwdm1tMnB4bDF6" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG"></a>
+              <a href="https://www.tiktok.com/@rizkyhaviz14?_r=1&_t=ZS-95z8yTF37B9" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            </div>
           </div>
         </div>
 
-        <div class="member-card reveal reveal-delay-4">
-          <div class="member-photo photo-4">
-          </div>
+        <!-- Anggota 4 -->
+        <div class="member-card reveal">
+          <div class="member-photo photo-4"></div>
           <div class="member-info">
-            <h3>Salman Alfarisy Isnurdian</h3>
+            <h3>Salman Alfarisy I.</h3>
             <div class="member-role">257006111031</div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/sslmannn_?igsh=MTBtMnpmOHhyYml2ag==" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG"></a>
+              <a href="https://www.tiktok.com/@sslmannn_" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            </div>
           </div>
         </div>
 
-        <div class="member-card reveal reveal-delay-5">
-          <div class="member-photo photo-5">
-          </div>
+        <!-- Anggota 5 -->
+        <div class="member-card reveal">
+          <div class="member-photo photo-5"></div>
           <div class="member-info">
             <h3>Dita Dwi Meilani</h3>
             <div class="member-role">257006111038</div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/dwxmey_?igsh=MWkzYXBobnBtcTZ0ag%3D%3D" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG"></a>
+              <a href="https://www.tiktok.com/@dwxmey?_r=1&_t=ZS-95z7YTSFLfh" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            </div>
           </div>
         </div>
 
-        <div class="member-card reveal reveal-delay-6">
-          <div class="member-photo photo-6">
-          </div>
+        <!-- Anggota 6 -->
+        <div class="member-card reveal">
+          <div class="member-photo photo-6"></div>
           <div class="member-info">
-            <h3>Sheyla Sri Agus Dwiyani</h3>
+            <h3>Sheyla Sri Agus D.</h3>
             <div class="member-role">257006111046</div>
+            <div class="social-links">
+              <a href="https://www.instagram.com/seyylallaa?igsh=OXludmd6MWVqNmtl" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="IG"></a>
+              <a href="https://www.tiktok.com/@sheylaa.srr?_r=1&_t=ZS-95z7dscY3sN" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
-    <section class="cta-section">
-      <h2 class="reveal"></h2>
-      <p class="reveal reveal-delay-1"></p>
-      <button class="btn-cta reveal reveal-delay-2" id="btnMulaiAnalisis"></button>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
       <div class="footer-logo">
@@ -658,11 +435,7 @@
       <h4>Kontak</h4>
       <div class="kontak-item">
         <div class="kontak-icon">
-<<<<<<< HEAD
           <img src="../gambar/location.svg" alt="icon lokasi" class="lokasi-ikon">
-=======
-          <img src="../gambar/location.svg " alt="icon lokasi" class="lokasi-ikon">
->>>>>>> 2559e450cd2e1ca6b6577161b0adb196cc8efc4d
         </div>
         <span>Mugarsari, Tamansari Tasikmalaya, Indonesia 46196</span>
       </div>
@@ -674,10 +447,25 @@
       </div>
     </div>
   </footer>
+
   <div class="footer-bottom">
     <p>&copy; 2026 Lagi Lagi Abis</p>
   </div>
 
+  <script>
+    // Script sederhana untuk animasi reveal saat scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
   <script src="script.js"></script>
 
 </body>
