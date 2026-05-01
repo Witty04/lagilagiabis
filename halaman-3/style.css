@@ -1,0 +1,300 @@
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --peach-dark: #d9a299;
+      --peach-mid: #DCC5B2;
+      --peach-light: #F0E4D3;
+      --peach-pale: #FAF7F3;
+      --peach-pastel: #eb4f7e;
+      --peach-bg: #eaf2ed;
+      --gray-bg: #f0ede8;
+      --gray-card: #e8e4df;
+      --gray-light: #f5f3f0;
+      --text-dark: #804c44;
+      --text-mid: #3a3a3a;
+      --text-muted: #6b6b6b;
+      --white: #ffffff;
+      --peach-hover: #eab9b2;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #F0E4D3 100%);
+      color: var(--text-dark);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 60px;
+      background: var(--white);
+      border-bottom: 1px solid #e8e4df;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.3s;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 40px;
+      height: 40px;
+      background-image: url('../gambar/logoLLA.png');
+      background-size: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .btn-aboutus {
+      background: var(--peach-dark);
+      color: var(--white);
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ===== MAIN ===== */
+    main { flex: 1; }
+
+    .about-section {
+      padding: 64px 60px 48px;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--gray-card);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .team-section {
+      padding: 56px 60px 64px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .team-photo-wrapper {
+      margin: 36px 0 24px;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16/7;
+      background-image: url(../gambar/team.jpeg);
+      background-size: cover;
+    }
+
+    .team-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    /* ===== MEMBER GRID ===== */
+    .member-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .member-card {
+      background: var(--peach-dark);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+     .member-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px var(--peach-dark);
+    }
+
+    .member-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .member-info { padding: 18px 20px 20px; text-align: center; }
+    .member-info h3 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .member-info .member-role { font-size: 12px; color: var(--white); font-weight: 600; margin-bottom: 8px; }
+
+    /* ===== SOCIAL LINKS ===== */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      transition: transform 0.2s ease, opacity 0.2s;
+    }
+
+    .social-links a:hover { transform: scale(1.2); opacity: 0.8; }
+
+    .social-links img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1); /* Membuat ikon menjadi putih */
+    }
+
+    /* Bagian yang dihapus/disembunyikan sesuai permintaan */
+    .cta-section { display: none; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 48px 60px 36px;
+      background: var(--peach-hover);
+      gap: 48px;
+      border-top: 1px solid var(--gray-card);
+      margin-top: auto;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo-icon {
+      width: 40px;
+      height: 40px;
+      background-image: url('../gambar/logoLLA.png');
+      background-size: cover;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: white;
+      line-height: 1.7;
+    }
+
+    .footer-kontak h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .kontak-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .kontak-icon {
+      width: 18px;
+      height: 18px;
+      /* background-image: url(../gambar/email.svg); */
+      background-size: cover;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .lokasi-ikon, .email-ikon {
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+    }
+
+    .kontak-item span {
+      font-size: 13px;
+      color: white;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 60px;
+      background: var(--peach-dark);
+      font-size: 13px;
+      color: white;
+    }
+
+    .footer-bottom-icon {
+      width: 18px;
+      height: 18px;
+      background: var(--peach-dark);
+      border-radius: 4px;
+    }
+
+
+    /* Animasi Reveal */
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Foto Anggota */
+    .photo-1 { background-image: url('../gambar/okan.jpeg'); }
+    .photo-2 { background-image: url('../gambar/fathir.HEIC'); }
+    .photo-3 { background-image: url('../gambar/haviz.HEIC'); }
+    .photo-4 { background-image: url('../gambar/salman.HEIC'); }
+    .photo-5 { background-image: url('../gambar/dita.HEIC'); }
+    .photo-6 { background-image: url('../gambar/sheyla.HEIC'); }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .member-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; padding: 32px 24px; }
+    }
